@@ -26,19 +26,19 @@ import org.springframework.util.ClassUtils;
  * @since 2.0.0
  */
 public enum WebApplicationType {
-
+	//非 WEB 项目
 	/**
 	 * The application should not run as a web application and should not start an
 	 * embedded web server.
 	 */
 	NONE,
-
+	//SERVLET WEB 项目
 	/**
 	 * The application should run as a servlet-based web application and should start an
 	 * embedded servlet web server.
 	 */
 	SERVLET,
-
+	//响应式 WEB 项目
 	/**
 	 * The application should run as a reactive web application and should start an
 	 * embedded reactive web server.

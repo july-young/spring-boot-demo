@@ -1,6 +1,7 @@
 package com.july.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -12,8 +13,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class MyTestController {
 
 	@ResponseBody
-	@RequestMapping("/hello")
-	public String hello() {
-		return "hello world";
+	@RequestMapping("/hello/{id}")
+	public String hello(@PathVariable Integer id) {
+
+		if(1 == id){
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return "hello world"+id;
 	}
 }
